@@ -2,9 +2,11 @@ import { AddAuthor } from "./components/AddAuthor/AddAuthor";
 import { AddBook } from "./components/AddBook/AddBook";
 import { AuthorList } from "./components/AuthorList/AuthorList";
 import { BookList } from "./components/BookList/BookList";
-import { useLibary } from "./hooks/useLibary/useLibary";
+import { useAuthors } from "./hooks/useAuthors/useAuthors";
+import { useBooks } from "./hooks/useBooks/useBooks";
 export function App() {
-  const { authors, books, add_author, add_book } = useLibary();
+  const { books, add_book } = useBooks();
+  const { authors, add_author } = useAuthors();
   return (
     <>
       <h1>Library App</h1>
