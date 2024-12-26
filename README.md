@@ -2,7 +2,7 @@
 
 ## Description
 
-A basic react app create with vite using typescript.
+A basic react app created with vite using typescript.
 
 ## Installation
 
