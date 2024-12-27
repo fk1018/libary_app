@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  message_uploader_test:
+  libary_app_test:
     runs-on: ubuntu-latest
 
     steps:
