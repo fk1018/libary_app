@@ -61,7 +61,7 @@ To build and run the app in a production environment:
 1. Build and start the production container:
 
 ```bash
-docker-compose up prod
+docker compose up prod
 ```
 
 2. Access the app at http://localhost:3000.
@@ -73,7 +73,7 @@ The production environment uses dockerfile.production and serves the app via Ngi
 - Build a specific environment:
 
 ```bash
-docker-compose build <service_name>
+docker compose build <service_name>
 ```
 
 Replace `<service_name>` with dev or prod.
@@ -81,19 +81,19 @@ Replace `<service_name>` with dev or prod.
 - Stop all running containers:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 - Rebuild and start containers:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 - View container logs:
 
 ```bash
-docker-compose logs <service_name>
+docker compose logs <service_name>
 ```
 
 Replace `<service_name>` with dev or prod.
