@@ -18,7 +18,7 @@ services:
   prod:
     build:
       context: .
-      dockerfile: production.dockerfile
+      dockerfile: dockerfile.production
     ports:
       - "3000:80"
     environment:
