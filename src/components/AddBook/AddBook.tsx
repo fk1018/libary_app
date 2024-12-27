@@ -7,12 +7,12 @@ export function AddBook({
   on_add_book,
 }: {
   authors: author[];
-  on_add_book: (book_title: string, author_id: string) => void;
+  on_add_book: (book_title: string, author_id: string) => Promise<void>;
 }) {
-  const [author_id, set_author_id] = useState("");
-  const [book_title, set_book_title] = useState("");
+  const [author_id, set_author_id] = useState<string>("");
+  const [book_title, set_book_title] = useState<string>("");
   return (
-    <>
+    <section>
       <h3>Add a book</h3>
       <label htmlFor="book-title">Book Title:</label>
       <input
@@ -44,6 +44,6 @@ export function AddBook({
       >
         Add Book
       </button>
-    </>
+    </section>
   );
 }
