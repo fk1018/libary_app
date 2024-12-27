@@ -14,9 +14,10 @@ describe("BookList", () => {
     expect(book_list.length).toBe(2);
   });
   library_test("displays no books", async ({}) => {
-    render(<BookList books={[]} />);
-    const book_list = await screen.getByRole<HTMLUListElement>("list");
+    const header_text = "No Books";
 
-    expect(book_list.children.length).toBe(0);
+    render(<BookList books={[]} />);
+    const no_books_heading = await screen.getByRole<HTMLHeadElement>("heading");
+    expect(no_books_heading.textContent).toBe(header_text);
   });
 });

@@ -13,10 +13,13 @@ describe("AuthorList", () => {
 
     expect(author_list.length).toBe(2);
   });
-  library_test("displays no authors", ({}) => {
-    render(<AuthorList authors={[]} />);
-    const author_list = screen.getByRole<HTMLUListElement>("list");
+  library_test("displays no authors", async ({}) => {
+    const header_text = "No Authors";
 
-    expect(author_list.children.length).toBe(0);
+    render(<AuthorList authors={[]} />);
+    const no_authors_heading = await screen.getByRole<HTMLHeadElement>(
+      "heading"
+    );
+    expect(no_authors_heading.textContent).toBe(header_text);
   });
 });
