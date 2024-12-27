@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      NODE_ENV: development
+    stdin_open: true
+    tty: true
+
+  prod:
+    build:
+      context: .
+      dockerfile: production.dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      NODE_ENV: production
+    restart: always
